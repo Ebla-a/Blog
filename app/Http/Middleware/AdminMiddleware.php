@@ -12,14 +12,19 @@ class AdminMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response) $next
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $user = Auth::User();
-        if(!$user || $user->role !== 'admin'){
-            return redirect('/') ->with('error' ,'you are not allowed to access');
+        $user = Auth::user();
+
+        if (!$user || $user->role !== 'admin') {
+            // ممكن تستخدم abort أو redirect حسب حاجتك
+            return redirect('/')
+                ->with('error', 'You are not allowed to access this page');
         }
+
         return $next($request);
     }
 }

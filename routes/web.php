@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,10 +21,21 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth','admin'])->group(function()
-{
-    Route::get('/admin' ,[AdminMiddleware::class,'index']);
-}
+// blog controller 
+Route::get('/',[BlogController::class ,'index'])->name('blogs.index');
+Route::get('/blog/{blog}',[BlogController::class,'show'])->name('blogs.show');
 
-);
+//
+Route::middleware(['auth'])->group(function () {
+
+    Route::post('/favorites/{blog}/toggle', 
+        [FavoriteController::class, 'toggle']
+    )->name('favorites.toggle');
+
+    Route::get('/favorites', 
+        [FavoriteController::class, 'index']
+    )->name('favorites.index');
+});
+
+require __DIR__.'/admin.php';
 require __DIR__.'/auth.php';
