@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 
 use App\Http\Requests\RequestBlogUpdate;
 use App\Models\Blog;
 use App\Services\BlogService;
-use Illuminate\Repostry\configratiin\middleware;
-use Illuminate\Http\Request;
+
+
 
 use App\Http\Requests\RequestBlogStore;
 
@@ -48,6 +49,7 @@ class AdminBlogController extends Controller
 
     public function edit(Blog $blog)
     {
+
         return view('admin.blogs.edit',compact('blog'));
     }
 
@@ -77,7 +79,7 @@ class AdminBlogController extends Controller
      */
     public function trash(){
         $blogs = Blog::onlyTrashed()->paginate(10);
-        return view('admin.blogs.trash', compact(var_name: 'blogs'));
+        return view('admin.blogs.trash', compact('blogs'));
     }
     /**
      * return deleted blogs

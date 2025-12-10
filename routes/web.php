@@ -1,20 +1,17 @@
 <?php
 
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\User\BlogController;
+use App\Http\Controllers\User\FavoriteController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+})->middleware(['auth'])->name('dashboard');
+ //Breeze profile
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -22,12 +19,11 @@ Route::middleware('auth')->group(function () {
 });
 
 // blog controller 
-Route::get('/',[BlogController::class ,'index'])->name('blogs.index');
-Route::get('/blog/{blog}',[BlogController::class,'show'])->name('blogs.show');
+Route::get('/',[BlogController::class ,'index'])->name('frontend.index');
+Route::get('/blog/{blog}',[BlogController::class,'show'])->name('frontend.blog.show');
 
-//
+//favorites (login requierd)
 Route::middleware(['auth'])->group(function () {
-
     Route::post('/favorites/{blog}/toggle', 
         [FavoriteController::class, 'toggle']
     )->name('favorites.toggle');
@@ -39,3 +35,4 @@ Route::middleware(['auth'])->group(function () {
 
 require __DIR__.'/admin.php';
 require __DIR__.'/auth.php';
+

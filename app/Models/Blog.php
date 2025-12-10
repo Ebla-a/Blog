@@ -14,7 +14,7 @@ class Blog extends Model
         'content',
         'image',
     ];
-    public function boot(){
+    public static function boot(){
         parent::boot();
         static::creating(function($blog){
             $blog->slug = Str::slug($blog->title);

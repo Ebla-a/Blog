@@ -37,12 +37,8 @@ class RequestBlogStore extends FormRequest
              'content.required' =>'the content is already exist',
              'image.image' =>'',
              'image.max'=>'the size of image must be less than 2MB',
-             
+
         ];
-
-
-
-        ]
         
     }
 }

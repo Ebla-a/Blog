@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
@@ -19,7 +21,6 @@ class FavoriteController extends Controller
          else {
             $user->favorites()->attach($blog->id);
             $blog->increment("favorite_count");
-
          }
 
          return back()->with('success' ,'updated favorites');

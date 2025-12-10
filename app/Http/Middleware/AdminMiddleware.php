@@ -20,7 +20,6 @@ class AdminMiddleware
         $user = Auth::user();
 
         if (!$user || $user->role !== 'admin') {
-            // ممكن تستخدم abort أو redirect حسب حاجتك
             return redirect('/')
                 ->with('error', 'You are not allowed to access this page');
         }

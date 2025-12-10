@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\Blog;
 use App\Models\Category;
@@ -13,14 +15,15 @@ class BlogController extends Controller
 
         $blogs = Blog::with('categories')->latest()->paginate(10);
         $categoroies = Category::all();
-        return view("user.blogs.index",compact($blogs,$categoroies));
+        return view("frontend.home",compact('blogs','categoroies'));
     }
     public function show(Blog $blog){
         $blog->load('categories');// eager loading
-        return view("user.blogs.show",compact($blog));
+        return view("user.blogs.show",compact('blog'));
     }
     public function filterByCatgory(Category $category){
         $blogs = $category->blogs()->latest()->paginate(10);
+        
         return view("user.blogs.index",compact([
             'blogs' =>$blogs,
             'categories' =>Category::all(),
@@ -29,3 +32,32 @@ class BlogController extends Controller
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
