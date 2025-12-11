@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title','مفضلتي')
+@section('title','my favorite')
 
 @section('content')
 
@@ -19,11 +19,11 @@
 
             <div class="card-body">
                 <h5>{{ $blog->title }}</h5>
-                <a href="{{ route('frontend.blog.show',$blog) }}" class="btn btn-primary btn-sm">عرض</a>
+                <a href="{{ route('frontend.blog.show',$blog) }}" class="btn btn-primary btn-sm">Show</a>
 
                 <form action="{{ route('favorites.toggle',$blog) }}" method="POST" class="d-inline">
                     @csrf
-                    <button class="btn btn-danger btn-sm">إزالة</button>
+                    <button class="btn btn-danger btn-sm">Remove</button>
                 </form>
             </div>
 

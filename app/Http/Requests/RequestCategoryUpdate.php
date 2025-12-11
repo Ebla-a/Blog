@@ -21,16 +21,18 @@ class RequestCategoryUpdate extends FormRequest
      */
     public function rules(): array
     {
-        $catgoryId = $this->route('category')->id();
+        $categoryId = $this->route('category')->id;
+
         return [
-             'name'=>'required|sttring|max:255|uinque:categories,name'.$catgoryId,
+             'name'=>'required|string|max:255|unique:categories,name,' . $categoryId
+
         ];
     }
       public function messages(){
         return [
              'name.required' =>'the name is requires',
              'name.string' =>'the name must be a string',
-             'name.uinque' =>'the name is already exist',
+             'name.unique' =>'the name is already exist',
         ];
     }
 }

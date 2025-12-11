@@ -21,7 +21,7 @@ class RequestBlogUpdate extends FormRequest
      */
     public function rules(): array
     {
-        $blogId = $this->route('blog')->id();
+        $blogId = $this->route('blog')->id;
         return [
             "title" =>"required|string|max:255".$blogId,
             "content" =>"required|string",

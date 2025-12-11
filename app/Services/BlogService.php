@@ -56,6 +56,7 @@ class BlogService
         $blog->delete();
     }
     public function restore(Blog $blog){
+        // $blog = Blog::withTrashed()->findOrFail($blog);
         $blog->restore();
     }
     
@@ -66,3 +67,7 @@ class BlogService
         $blog->forceDelete();
     }
 }
+
+
+
+

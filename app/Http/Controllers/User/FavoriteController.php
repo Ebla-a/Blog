@@ -15,7 +15,7 @@ class FavoriteController extends Controller
          
          $isFavorite=$user->favorites()->where("blog_id",$blog->id)->exists();
          if($isFavorite){
-            $user->favorites()->deattach($blog->id);
+            $user->favorites()->detach($blog->id);
             $blog->decrement("favorite_count");
          }
          else {
@@ -28,7 +28,7 @@ class FavoriteController extends Controller
     public function index()
     {
         $favorites = Auth()->user()->favorites()->latest()->paginate(10);
-        return view('user.favorite.index' ,compact('favorites'));
+        return view('frontend.favorites.index' ,compact('favorites'));
     }
    
 

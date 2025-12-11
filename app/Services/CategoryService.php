@@ -35,13 +35,7 @@ class CategoryService
         return $category;
     }
     public function delete(Category $category){
-        $category->delete();
+        $category->delete(); // final delete
     }
-    public function restore(Category $category){
-        $category->restore();
-    }
-    
-    public function forceDelete(Category $category){
-        $category->forceDelete();
-    }
+  
 }

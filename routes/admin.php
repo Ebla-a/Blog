@@ -1,13 +1,19 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminBlogController;
+use App\Http\Controllers\admin\AdminBlogController;
 use App\Http\Controllers\Admin\AdminCategoryController;
-use App\Http\Controllers\AdminDashboard\AdminDashboardController;
+use App\Http\Controllers\admin\AdminDashboardController;
+
 
 Route::middleware(['auth','admin'])
     ->prefix('admin')
     ->name('admin.')
     ->group(function () {
+        
+        //dashboard
+                
+            Route::get('/dashboard', [AdminDashboardController::class, 'index'])
+            ->name('dashboard');
 
         // Blogs
         Route::resource('blogs', AdminBlogController::class);
@@ -18,10 +24,6 @@ Route::middleware(['auth','admin'])
         // Categories
         Route::resource('categories', AdminCategoryController::class);
 
-        //dashboard
-                
-            Route::get('/dashboard', [AdminDashboardController::class, 'index'])
-            ->name('admin.dashboard');
     });
   
 

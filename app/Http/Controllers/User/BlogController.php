@@ -1,63 +1,34 @@
 <?php
-
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-
 use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    // $query = Blog::qyery();
-    public function index(){
+    public function index(Request $request)
+    {
+        $query = Blog::query();
 
-        $blogs = Blog::with('categories')->latest()->paginate(10);
-        $categoroies = Category::all();
-        return view("frontend.home",compact('blogs','categoroies'));
-    }
-    public function show(Blog $blog){
-        $blog->load('categories');// eager loading
-        return view("user.blogs.show",compact('blog'));
-    }
-    public function filterByCatgory(Category $category){
-        $blogs = $category->blogs()->latest()->paginate(10);
-        
-        return view("user.blogs.index",compact([
-            'blogs' =>$blogs,
-            'categories' =>Category::all(),
-            'selectedCategory' =>$category
-        ]));
+        if ($request->has('category') && $request->category != '') {
+            $query->whereHas('categories', function($q) use ($request) {
+               $q->where('categories.id', $request->category);
 
+            });
+        }
+
+        $blogs = $query->with('categories')->latest()->paginate(10);
+
+        $categories = Category::all(); 
+
+        return view('frontend.blogs.index', compact('blogs', 'categories'));
+    }
+
+    public function show(Blog $blog)
+    {
+        $blog->load('categories');
+        return view('frontend.blogs.show', compact('blog'));
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

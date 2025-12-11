@@ -22,14 +22,14 @@ class RequestCategoryStore extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required|sttring|max:255|uinque:categories,name',
+            'name'=>'required|string|max:255|unique:categories,name',
         ];
     }
     public function messages(){
         return [
              'name.required' =>'the name is requires',
              'name.string' =>'the name must be a string',
-             'name.uinque' =>'the name is already exist',
+             'name.unique' =>'the name is already exist',
         ];
     }
 }

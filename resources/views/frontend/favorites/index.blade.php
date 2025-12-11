@@ -26,7 +26,7 @@
         </div>
     </div>
     @empty
-        <p class="text-muted">لا توجد مدونات مفضلة</p>
+        <p class="text-muted">No favorites Blogs have been added yet</p>
     @endforelse
 </div>
 

@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Blog extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasFactory;
     protected $fillable =[
         'title',
         'content',
