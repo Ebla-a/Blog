@@ -83,30 +83,48 @@ The **admin** dashboard provides an overview of the system:
 Quick access to CRUD operations:
 Manage soft-deleted items (restore or permanently delete)
 
-### Screenshots
-## Admin Dashboared 
-[public\ScreanShotes\Dashboared.PNG]
-## Blogs
-- List Blogs
-[public\ScreanShotes\Blogs-Admin.PNG]
-- Add Blog
- [public\ScreanShotes\add new blog -admin.PNG]
-- Edit Blog
-  [public\ScreanShotes\Edit Blog - admin.PNG]
-  -Single Bage Blog
-  [public\ScreanShotes\Single-Bage-Blog- Read more button.PNG]
-  - Favorite Bage
-    [public\ScreanShotes\Favorite Page.PNG]
-  ## Categories
-  - List Of Categories
-    [public\ScreanShotes\Categories.PNG]
-    - Add Category
-      [public\ScreanShotes\Add Category -Admin.PNG]
-      - Edit Category
-        [public\ScreanShotes\Edit Blog - admin.PNG]
+##  Screenshots
 
-## Trash / Recycle Bin
-[public\ScreanShotes\Recycle Bin - admin.PNG]
+### Admin Dashboard
+![Admin Dashboard](public/ScreanShotes/Dashboared.PNG)
+
+---
+
+##  Blogs Management
+
+###  List Blogs
+![List Blogs](public/ScreanShotes/Blogs-Admin.PNG)
+
+###  Add Blog
+![Add Blog](public/ScreanShotes/add new blog -admin.PNG)
+
+###  Edit Blog
+![Edit Blog](public/ScreanShotes/Edit Blog - admin.PNG)
+
+###  Single Blog Page
+![Single Blog](public/ScreanShotes/Single-Bage-Blog- Read more button.PNG)
+
+###  Favorite Page
+![Favorite Page](public/ScreanShotes/Favorite Page.PNG)
+
+---
+
+##  Categories Management
+
+###  List Categories
+![Categories](public/ScreanShotes/Categories.PNG)
+
+### Add Category
+![Add Category](public/ScreanShotes/Add Category -Admin.PNG)
+
+###  Edit Category
+![Edit Category](public/ScreanShotes/Edit Blog - admin.PNG)
+
+---
+
+##  Trash / Recycle Bin
+![Recycle Bin](public/ScreanShotes/Recycle Bin - admin.PNG)
+
 
 
  
