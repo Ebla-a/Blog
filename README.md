@@ -23,7 +23,7 @@ The project includes authentication, blog management, categories, favorites, and
 - Soft delete & restore functionality
 - Permanent delete option
 - Admin Dashboard showing:
-  - Total number of blogs
+  - Total blogs
   - Total categories
   - Total users
 - Manage all content from a centralized dashboard
