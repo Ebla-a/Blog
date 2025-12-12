@@ -50,7 +50,7 @@ git clone https://github.com/Ebla-a/Blog.git
 ### 2. Install dependencies
 - composer install
 - npm install
-  ###3 . Set up the environment variables
+###3 . Set up the environment variables
 Copy the .env.example file to .env and update the database credentials and other necessary configuration
 
  ### 4. Generate application key
@@ -76,8 +76,7 @@ php artisan migrate --seed
 ### Authentication
 The **admin** dashboard provides an overview of the system:
 
-- Total
--  Blogs
+- Total Blogs
 - Total Categories
 - Total Users
 
