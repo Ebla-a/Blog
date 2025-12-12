@@ -89,7 +89,7 @@
     <!-- Sidebar -->
     <div class="sidebar p-3">
 
-        <h4>لوحة التحكم</h4>
+        <h4>Control Panel</h4>
 
         <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
             <i class="bi bi-speedometer2 me-1"></i>  Controle panel
