@@ -19,7 +19,6 @@ The project includes authentication, blog management, categories, favorites, and
 - Full CRUD operations for:
   - Blogs
   - Categories
-  - Users
 - Soft delete & restore functionality
 - Permanent delete option
 - Admin Dashboard showing:
