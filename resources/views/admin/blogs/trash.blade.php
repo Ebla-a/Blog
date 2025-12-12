@@ -131,7 +131,7 @@
                 @empty
                     <tr>
                         <td colspan="6" class="text-center text-muted py-4">
-                            لا توجد مقالات محذوفة.
+                            there are no deleted blogs yet
                         </td>
                     </tr>
                 @endforelse

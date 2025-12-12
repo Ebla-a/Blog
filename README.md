@@ -1,8 +1,8 @@
 # Blog Project – Laravel
 
-A full-featured **Blog Application** built with **Laravel**, supporting two roles: **Admin** and **User**.
+A full-featured **Blog Application** built with **Laravel** , supporting two roles **Admin** and **User**
 
-The project includes authentication, blog management, categories, favorites, and an admin dashboard with advanced CRUD and restore/delete functionalities.
+The project includes authentication , blog management , categories ,favorites, and an admin dashboard with advanced CRUD and restore/delete functionalities
 
 ---
 
@@ -50,10 +50,10 @@ git clone https://github.com/Ebla-a/Blog.git
 ### 2. Install dependencies
 - composer install
 - npm install
-  ###3 . Set up the environment variables
+ ### 3 . Set up the environment variables
 Copy the .env.example file to .env and update the database credentials and other necessary configuration
 
- ### 4. Generate application key
+### 4. Generate application key
  php artisan key:generate
 
 ### 5. Run migrations and seed the database
