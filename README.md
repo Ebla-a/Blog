@@ -65,6 +65,14 @@ npm run dev
 php artisan serve
 The application will be available at: http://localhost:8000
 
+## Database Seeding
+
+This project includes factories and seeders to generate sample data for testing
+
+To seed the database run:
+
+php artisan migrate --seed
+
 ### Authentication
 The **admin** dashboard provides an overview of the system:
 
