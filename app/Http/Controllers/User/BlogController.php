@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Category;
+ use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -18,17 +19,19 @@ class BlogController extends Controller
 
             });
         }
-
+        
         $blogs = $query->with('categories')->latest()->paginate(10);
 
         $categories = Category::all(); 
-
-        return view('frontend.blogs.index', compact('blogs', 'categories'));
+      
+        return view('frontend.blogs.index', compact(
+            'blogs', 'categories',
+    ));
     }
 
     public function show(Blog $blog)
     {
-        $blog->load('categories');
+        $blog->load(['categories','comments.user']);
         return view('frontend.blogs.show', compact('blog'));
     }
 }

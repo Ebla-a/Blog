@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\User\CommentController;
+
 use App\Http\Controllers\User\BlogController;
 use App\Http\Controllers\User\FavoriteController;
 use App\Http\Controllers\ProfileController;
@@ -31,6 +33,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/favorites', 
         [FavoriteController::class, 'index']
     )->name('favorites.index');
+ // comment
+   Route::post('/comments/{blog}', [CommentController::class, 'store'])
+    ->name('comments.store');
+    Route::delete('/comments/{comment}',[CommentController::class,'destroy'])->name('comments.destroy');
 });
 
 require __DIR__.'/admin.php';

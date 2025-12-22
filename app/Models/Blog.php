@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use \App\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -26,5 +27,9 @@ class Blog extends Model
     }
      public function favoritedBy(){
         return $this->belongsToMany(User::class,'favorites')->withTimestamps();
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }
