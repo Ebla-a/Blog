@@ -125,7 +125,10 @@ Manage soft-deleted items (restore or permanently delete)
 ![Recycle Bin](public/ScreanShotes/Recycle Bin - admin.PNG)
 
 
-
+### comment section 
+- add comment (login required)
+- User can delete his own comment
+- admin can delete any comment
  
 
 
